@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断</title>
+</head>
+<body>
+<!--View层-->
+<div id="app">
+<!--    判断-->
+    <h1 v-if="message>=60">及格</h1>
+    <h1 v-else>不及格</h1>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+<!--Model层-->
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            message: 80
+        }
+    })
+</script>
+</html>

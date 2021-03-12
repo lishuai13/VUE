@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环</title>
+</head>
+<body>
+<!--View层-->
+<div id="app">
+    <!--    循环-->
+    <h1 v-for="item in items">{{item.message}}</h1>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+<!--Model层-->
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            items: [
+                {message: "数学"},
+                {message: "语文"},
+                {message: "英语"},
+            ]
+        }
+    })
+</script>
+</html>

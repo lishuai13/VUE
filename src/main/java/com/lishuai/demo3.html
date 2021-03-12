@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定事件</title>
+</head>
+<body>
+<!--View层-->
+<div id="app">
+    <!--    绑定-->
+    <p>{{message}}</p>
+    <button v-on:click="sayHi">反转</button>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+<!--Model层-->
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            message: "Hello"
+        },
+        methods: {
+            sayHi: function () {
+                this.message = this.message.split('').reverse().join('')
+            }
+        }
+    })
+</script>
+</html>
