@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+</head>
+<body>
+<!--View层-->
+<div id="app">
+    <!-- 创建组件实例，并绑定数据传给组件,这里的index是数组自带的下表属性-->
+    <todo-item v-for="(item,index) in items" v-bind:index="index" v-bind:todo="item" ></todo-item>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+<!--Model层-->
+<script>
+    // 定义组件
+    // 注意：组件和Vue对象属于同一级，无法直接访问Vue对象中的数据、方法
+    Vue.component('todo-item', {
+        // Vue通过 v-bind 和 props 实现了Vue绑定的Dom和组件之间的参数传递
+        // 注意：props中通常不使用大写字母
+        props: ['index','todo'],
+        template: '<li>{{index}}-{{todo}}<button v-on:click="remove">删除</button></li>',
+        methods: {
+            remove: function () {
+                this.$emit
+            }
+        }
+    })
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            items: ['My journey with Vue' , 'Blogging with Vue' , 'Why Vue is so fun']
+        }
+    })
+</script>
+</html>
